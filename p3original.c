@@ -8,16 +8,21 @@ return n;
 }
 int is_composite(int n)
 {
- int i,c;
- for(i=2;i<n;i++)
+ for( int i=2;i<n/2;i++)
  {
-  c=n/i;
+   if((n % i)==0)
+   return 1;
  }
- return c;
+ return 0;
 }
 void output(int n,int composite)
 {
- printf("%d is Composite Number \n",n);
+ if(composite)
+ {
+ printf("%d is a Composite Number \n",n);
+ }
+ else
+ printf("%d is  not  a Composite Number \n",n);
 }
 int main()
 {
