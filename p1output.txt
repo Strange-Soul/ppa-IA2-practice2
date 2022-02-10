@@ -1,1 +1,49 @@
+(gdb) b main
+Breakpoint 1 at 0x818: file p0final.c, line 16.
+(gdb) r
+Starting program: /home/runner/IA2-Test1-Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p0final.c:16
+16  {
+(gdb) n
+18   input(&x,&y);
+(gdb) s
+input (base=0x7ffea982377c, height=0x7ffea9823780) at p0final.c:4
+4     printf("Enter the Base and height of Triangle \n");
+(gdb) n
+Enter the Base and height of Triangle 
+5     scanf("%f %f",base,height);
+(gdb) n
+1
+2
+6   }
+(gdb) n
+main () at p0final.c:19
+19   find_area(x,y,&z);
+(gdb) s
+find_area (base=1, height=2, area=0x7ffea9823784) at p0final.c:9
+9     *area=0.5*base*height;
+(gdb) n
+10  }
+(gdb) p area
+$1 = (float *) 0x7ffea9823784
+(gdb) p base
+$2 = 1
+(gdb) p height
+$3 = 2
+(gdb) p area
+$4 = (float *) 0x7ffea9823784
+(gdb) n
+main () at p0final.c:20
+20   output(x,y,z);
+(gdb) p area
+No symbol "area" in current context.
+(gdb) n
+Area of Triangle is 1.000000 
+21   return 0;
+(gdb) p area
+No symbol "area" in current context.
+(gdb) n
+22  }(gdb) c
+Continuing.
