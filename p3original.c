@@ -8,9 +8,9 @@ return n;
 }
 int is_composite(int n)
 {
- for( int i=2;i<n/2;i++)
+ for( int i=2;i<n;i++)
  {
-   if((n % i)==0)
+   if((n % i)==0)//n=8,n/2=4,n%i=8-(8/4)*4=0
    return 1;
  }
  return 0;
