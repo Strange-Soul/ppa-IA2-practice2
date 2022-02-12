@@ -6,8 +6,9 @@ void input_string(char *a)
 }
 char str_reverse(char *a)
 { 
- int i,j;
- for(i=0;i<)
+ char p
+
+ }
 }
 void output(char *a,char *reverse)
 {

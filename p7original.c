@@ -14,19 +14,19 @@ Triangle input_triangle()
  scanf("%f %f",&s.base,&s.altitude);
  return s;
 }
-void find_area( Triangle  *t)
+void find_area(Triangle *t)
 { 
 t->area=0.5*(t->base)*(t->altitude);
 }
-void output(Triangle t)
+void output(Triangle *t)//t.area=0.5*t.base*t.altitude
 {
- printf("Area of triangle with base =%f and with Altitude=%f is %f \n",t.base,t.altitude,t.area);
+ printf("Area of triangle with base =%f and with Altitude=%f is %f \n",t->base,t->altitude,t->area);
 }
 int main()
 {
   Triangle x,r;
   x=input_triangle();
   find_area(&x);
-  output(r);
+  output(&r);
   return 0;
 }
