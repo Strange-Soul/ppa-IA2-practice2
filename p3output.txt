@@ -1,57 +1,129 @@
-
 (gdb) b main
-Breakpoint 1 at 0x84b: file p3final.c, line 29.
+Breakpoint 1 at 0x842: file p3original.c, line 30.
 (gdb) r
-Starting program: /home/runner/IA2-Test1-Session2-2/a.out 
+Starting program: /home/runner/ppa-IA2-practice2-9/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p3final.c:29
-29   x=input_number();
+Breakpoint 1, main () at p3original.c:30
+30   x=input_number();
 (gdb) s
-input_number () at p3final.c:3
+input_number () at p3original.c:3
 3   {
 (gdb) n
-5    printf("Enter any number \n");
+5   printf("Enter any Number \n");
 (gdb) n
-Enter any number 
-6    scanf("%d",&n);
+Enter any Number 
+6   scanf("%d",&n);
 (gdb) n
-8
-7    return n;
+11
+7   return n;
 (gdb) n
 8   }
 (gdb) n
-main () at p3final.c:30
-30   y=is_composite(x);
+main () at p3original.c:31
+31   c=is_composite(x);
 (gdb) s
-is_composite (n=8) at p3final.c:12
-12   for(i=2;i<n/2;i++)
+is_composite (n=11) at p3original.c:11
+11   for( int i=2;i<n;i++)
 (gdb) p i
-$1 = 1334764813
+$1 = -1965477278
 (gdb) n
-14     if((n%i)==0)
+13     if((n % i)==0)//n=8,n/2=4,n%i=8-(8/4)*4=0
 (gdb) p i
 $2 = 2
-(gdb) p n
-$3 = 8
+(gdb) p n%i
+$3 = 1
 (gdb) n
-15      return 1;
+11   for( int i=2;i<n;i++)
+(gdb) p i
+$4 = 2
 (gdb) n
-18  }
+13     if((n % i)==0)//n=8,n/2=4,n%i=8-(8/4)*4=0
+(gdb) p i
+$5 = 3
+(gdb) p n%i
+$6 = 2
 (gdb) n
-main () at p3final.c:31
-31   output(x,y);
+11   for( int i=2;i<n;i++)
+(gdb) p i
+$7 = 3
+(gdb) n
+13     if((n % i)==0)//n=8,n/2=4,n%i=8-(8/4)*4=0
+(gdb) p i
+$8 = 4
+(gdb) p n%i
+$9 = 3
+(gdb) n
+11   for( int i=2;i<n;i++)
+(gdb) n
+13     if((n % i)==0)//n=8,n/2=4,n%i=8-(8/4)*4=0
+(gdb) p i
+$10 = 5
+(gdb) p n%i
+$11 = 1
+(gdb) n
+11   for( int i=2;i<n;i++)
+(gdb) p i
+$12 = 5
+(gdb) n
+13     if((n % i)==0)//n=8,n/2=4,n%i=8-(8/4)*4=0
+(gdb) p i
+$13 = 6
+(gdb) p n%i
+$14 = 5
+(gdb) n
+11   for( int i=2;i<n;i++)
+(gdb) n
+13     if((n % i)==0)//n=8,n/2=4,n%i=8-(8/4)*4=0
+(gdb) p i
+$15 = 7
+(gdb) p n%i
+$16 = 4
+(gdb) n
+11   for( int i=2;i<n;i++)
+(gdb) n
+13     if((n % i)==0)//n=8,n/2=4,n%i=8-(8/4)*4=0
+(gdb) p i
+$17 = 8
+(gdb) p n%i
+$18 = 3
+(gdb) n
+11   for( int i=2;i<n;i++)
+(gdb) n
+13     if((n % i)==0)//n=8,n/2=4,n%i=8-(8/4)*4=0
+(gdb) p i
+$19 = 9
+(gdb) p n%i
+$20 = 2
+(gdb) n
+11   for( int i=2;i<n;i++)
+(gdb) n
+13     if((n % i)==0)//n=8,n/2=4,n%i=8-(8/4)*4=0
+(gdb) p i
+$21 = 10
+(gdb) p n%i
+$22 = 1
+(gdb) n
+11   for( int i=2;i<n;i++)
+(gdb) n
+16   return 0;
+(gdb) n
+17  }
+(gdb) n
+main () at p3original.c:32
+32   output(x,c);
 (gdb) s
-output (n=8, composite=1) at p3final.c:21
-21   if(composite)
+output (n=11, composite=0) at p3original.c:20
+20   if(composite)
+(gdb) p composite
+$23 = 0
 (gdb) n
-22     printf("%d is  Composite Number\n",n);
+25   printf("%d is  not  a Composite Number \n",n);
 (gdb) n
-8 is  Composite Number
-25  }
+11 is  not  a Composite Number 
+26  }
 (gdb) n
-main () at p3final.c:32
-32   return 0;
-(gdb) n
-33  }(gdb) c
+main () at p3original.c:33
+33   return 0; 
+(gdb) c
 Continuing.
