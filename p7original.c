@@ -16,17 +16,17 @@ Triangle input_triangle()
 }
 void find_area(Triangle *t)
 { 
-t->area=0.5*(t->base)*(t->altitude);
+t->area=0.5*t->base*t->altitude;
 }
-void output(Triangle *t)//t.area=0.5*t.base*t.altitude
+void output(Triangle t)//t.area=0.5*t.base*t.altitude
 {
- printf("Area of triangle with base =%f and with Altitude=%f is %f \n",t->base,t->altitude,t->area);
+ printf("Area of triangle with base =%f and with Altitude=%f is %f \n",t.base,t.altitude,t.area);
 }
 int main()
 {
-  Triangle x,r;
+  Triangle x;
   x=input_triangle();
   find_area(&x);
-  output(&r);
+  output(x);
   return 0;
 }
