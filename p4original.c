@@ -12,11 +12,11 @@ void input_array(int n,int a[n])
  for(int i=0;i<n;i++)
    scanf("%d",&a[i]);
 }
-int is_composite(int n,int a[n])
+int is_composite(int n)
 {
-  for(int i=2;i<a[n];i++)
+  for(int i=2;i<=n/2;i++)
   {
-    if((a[i]%i)==0)
+    if((n%i)==0)
     return 1;
   }
   return 0;
@@ -24,10 +24,9 @@ int is_composite(int n,int a[n])
 int sum_composite_numbers(int n,int a[n])
 {
   int i,sum=0;
-  for(i=0;i<n;i++)
+  for( i=0;i<n;i++)
   {
-  if(is_composite==1)
-  printf("%d is Composite number \n",a[i]);
+  if(is_composite(a[i])==1)
     sum+=a[i];
   }
   return sum;
